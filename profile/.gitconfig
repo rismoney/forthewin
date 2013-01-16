@@ -8,7 +8,16 @@
   encoding = utf-8
   recentrepo = C:/puppet/modules/puppet-winclusters
 [alias]
+  me = config user.name
+  all = !git log --pretty=oneline --abbrev-commit --all --no-merges
+  last = !"git show --name-status"
   rich = !"git fetch upstream -v; git rebase upstream/master"
+  last-files = !"git last --pretty=format:"""
+  today = !git all --since='12am' --committer=\"`git me`\"
+  fdom = !git diff origin/master... --name-status
+  fdop = !git diff origin/production... --name-status
+  fdum = !git diff upstream/master... --name-status
+  fdup = !git diff upstream/production... --name-status
   st = status
   ci = commit
   br = branch
@@ -34,6 +43,10 @@
   added = yellow
   changed = green
   untracked = cyan
+[pager]
+  color = true
+[status]
+  color = auto
 
 [core]
 	autocrlf = false
