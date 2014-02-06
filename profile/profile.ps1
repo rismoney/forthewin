@@ -7,6 +7,13 @@ remove-item alias:ls
 set-alias ls Get-ChildItemColor
 set-alias which get-command | format-list Path;
 
+${function:u} = { cd .. }
+${function:...} = { cd ..\.. }
+${function:....} = { cd ..\..\.. }
+${function:.....} = { cd ..\..\..\.. }
+${function:......} = { cd ..\..\..\..\.. }
+${function:.......} = { cd ..\..\..\..\..\.. }
+
  # Helper Functions
 function ff ([string] $glob) { get-childitem -recurse -include $glob }
 function reboot { shutdown /r /t 5 }
