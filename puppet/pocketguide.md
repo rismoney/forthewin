@@ -97,7 +97,7 @@ exec { "myscript.ps1":
 
 Note we have the system path in the Exec by default in site.pp.  specifically:
 
-```
+```puppet
 Exec { path => $::path }
 ```
 
